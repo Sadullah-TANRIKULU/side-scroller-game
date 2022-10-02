@@ -91,8 +91,8 @@ window.addEventListener("load", function() {
     update(input, deltaTime, enemies) {
       // collision detection
       enemies.forEach(enemy => {
-        const dx = enemy.x + enemy.width / 2 - (this.x + this.width / 2);
-        const dy = enemy.y + enemy.height / 2 - (this.y + this.height / 2);
+        const dx = enemy.x + enemy.width / 3.5 - (this.x + this.width / 3.5); // enemy.x + enemy.width / 2 - (this.x + this.width / 2)
+        const dy = enemy.y + enemy.height / 3.5 - (this.y + this.height / 3.5); // enemy.y + enemy.height / 2 - (this.y + this.height / 2)
         const distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < enemy.width / 2 + this.width / 2) {
           gameOver = true;
@@ -257,9 +257,9 @@ window.addEventListener("load", function() {
     // displaying score or game over message
     context.font = "40px Helvetica";
     context.fillStyle = "black";
-    context.fillText("Score : ", + score, 20, 50);
+    context.fillText("Score : ", +score, 20, 50);
     context.fillStyle = "white";
-    context.fillText("Score : ", + score, 22, 52);
+    context.fillText("Score : ", +score, 22, 52);
     if (gameOver) {
       context.textAlign = "center";
       context.fillStyle = "black";
