@@ -1,8 +1,8 @@
 window.addEventListener("load", function() {
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
-  canvas.width = 550; // 800
-  canvas.height = 400; // 720
+  canvas.width = 800; //550; // 800
+  canvas.height = 720; // 400; // 720
   let enemies = [];
   let score = 0;
   let gameOver = false;
@@ -57,8 +57,8 @@ window.addEventListener("load", function() {
       this.frameTimer = 0;
       this.frameInterval = 1000 / this.fps;
       this.speed = 0;
-      this.vy = 0;
-      this.weight = 1;
+      this.vy = 10; // 0
+      this.weight = 0.8;  // 1
     }
     draw(context) {
       // context.strokeStyle = "white";
@@ -151,8 +151,8 @@ window.addEventListener("load", function() {
       this.image = document.getElementById("backgroundImage");
       this.x = 0;
       this.y = 0;
-      this.width = 860; // 2400
-      this.height = 400; // 720
+      this.width = 2400; // 860; // 2400
+      this.height = 720; // 400; // 720
       this.speed = 4;
     }
     draw(context) {
@@ -257,9 +257,9 @@ window.addEventListener("load", function() {
     // displaying score or game over message
     context.font = "40px Helvetica";
     context.fillStyle = "black";
-    context.fillText("Score : ", +score, 20, 50);
+    context.fillText("Score : " + score, 20, 50);
     context.fillStyle = "white";
-    context.fillText("Score : ", +score, 22, 52);
+    context.fillText("Score : " + score, 22, 52);
     if (gameOver) {
       context.textAlign = "center";
       context.fillStyle = "black";
